@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { uploadedFileState, roastResultState } from "@/state/atoms/resumeAtoms";
 
+
 const RoastPage: React.FC = () => {
     const uploadedFile = useRecoilValue(uploadedFileState);
     const roastResult = useRecoilValue(roastResultState);
