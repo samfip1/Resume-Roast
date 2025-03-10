@@ -1,10 +1,10 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { useRecoilValue, useResetRecoilState } from "recoil";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { uploadedFileState, roastResultState } from "@/state/atoms/resumeAtoms";
-
 
 const RoastPage: React.FC = () => {
     const uploadedFile = useRecoilValue(uploadedFileState);
@@ -38,9 +38,9 @@ const RoastPage: React.FC = () => {
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between space-y-8">
                     <div className="bg-gray-800/30 rounded-lg p-8 border border-gray-700/50 text-lg leading-relaxed">
-                        <p className="text-gray-300 whitespace-pre-wrap bg-gray-950/30 p-6 rounded-lg">
-                            {roastResult}
-                        </p>
+                        <div className="text-gray-300 whitespace-pre-wrap bg-gray-950/30 p-6 rounded-lg prose prose-invert">
+                            <ReactMarkdown>{roastResult}</ReactMarkdown>
+                        </div>
 
                         <div className="mt-6 text-sm italic text-gray-500">
                             <strong>Uploaded File:</strong> {uploadedFile.name}

@@ -76,26 +76,28 @@ const LandingPage: React.FC = () => {
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-gray-900/50 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-black/50 rounded-full blur-3xl animate-pulse delay-500"></div>
 
-            <Card className="w-full max-w-4xl bg-white/5 backdrop-blur-lg border-gray-800 text-white relative z-10 shadow-2xl shadow-black/50 p-8">
+            <Card className="w-full max-w-4xl bg-white/5 backdrop-blur-lg border-gray-800 text-gray-100 relative z-10 shadow-2xl shadow-black/50 p-8">
                 <CardHeader className="text-center space-y-6">
                     {error && (
-                        <div className="text-red-500 font-medium">
-                            <strong>Note:</strong> If request fails, reload after 30 seconds & try again 😃
+                        <div className="text-red-400 font-medium">
+                            <strong>Note:</strong> If request fails, reload
+                            after 30 seconds & try again 😃
                         </div>
                     )}
 
-                    <CardTitle className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 animate-text">
+                    <CardTitle className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 animate-text">
                         Dark Roast Resume <span className="text-white">☕</span>
                     </CardTitle>
 
-                    <p className="text-gray-400 mt-2 font-medium text-lg">
-                        <span className="text-yellow-300">Covert Mode:</span> Brew Your Resume's Doom! ⚡
+                    <p className="text-gray-300 mt-2 font-medium text-lg">
+                        <span className="text-yellow-400">Covert Mode:</span>{" "}
+                        Brew Your Resume's Doom! ⚡
                     </p>
                 </CardHeader>
 
                 <CardContent>
                     <div className="space-y-8">
-                        <div className="border-2 border-dashed border-gray-700 rounded-lg p-8 text-center group transition-all duration-300 hover:border-gray-500">
+                        <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center group transition-all duration-300 hover:border-gray-400">
                             <input
                                 type="file"
                                 accept=".pdf"
@@ -108,7 +110,7 @@ const LandingPage: React.FC = () => {
                                 className="cursor-pointer flex flex-col items-center space-y-4"
                             >
                                 <Upload className="w-16 h-16 text-gray-400 group-hover:text-white transition-colors" />
-                                <span className="text-gray-300 group-hover:text-white transition-colors font-semibold text-lg">
+                                <span className="text-gray-200 group-hover:text-white transition-colors font-semibold text-lg">
                                     {selectedFile
                                         ? `${selectedFile.name} (Ready to Brew ☕)`
                                         : "Upload Your Resume (PDF Only)"}
@@ -126,7 +128,7 @@ const LandingPage: React.FC = () => {
                             <Button
                                 onClick={generateRoast}
                                 disabled={isLoading}
-                                className="w-full bg-gradient-to-r from-gray-700 to-black hover:from-gray-600 hover:to-gray-800 text-white flex items-center justify-center space-x-2 transition-all duration-300 transform hover:scale-105 text-lg py-3"
+                                className="w-full bg-gradient-to-r from-gray-500 to-gray-800 hover:from-gray-400 hover:to-gray-600 text-white flex items-center justify-center space-x-2 transition-all duration-300 transform hover:scale-105 text-lg py-3"
                             >
                                 {isLoading ? (
                                     <>
@@ -142,7 +144,7 @@ const LandingPage: React.FC = () => {
                             </Button>
                         )}
 
-                        <div className="flex items-center text-red-400 text-lg bg-gray-800 p-3 rounded-lg">
+                        <div className="flex items-center text-red-400 text-lg bg-gray-700/50 p-3 rounded-lg">
                             <AlertCircle className="mr-3 w-6 h-6 text-red-500 font-medium" />
                             Warning: Expect a Bold, Bitter Roast! ☠️
                         </div>
